@@ -1,13 +1,5 @@
-import dto.Order;
-import dto.Person;
-import dto.Product;
-import service.Repository;
-
-import javax.crypto.spec.PSource;
-import java.time.LocalDate;
 import java.util.*;
 import java.util.function.BiConsumer;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamMainClass {

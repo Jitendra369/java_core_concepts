@@ -4,7 +4,7 @@ import dto.Person;
 
 import java.util.List;
 
-public class Repository {
+public class EmployeeRepository {
 
     public List<Person> getAllPerson(){
         List<Person> personList = List.of(

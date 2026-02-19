@@ -1,7 +1,7 @@
 package streams;
 
 import dto.Person;
-import service.Repository;
+import service.EmployeeRepository;
 
 import java.util.*;
 import java.util.function.BiFunction;
@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        Repository repository = new Repository();
-        List<Person> personList = repository.getAllPerson();
+        EmployeeRepository employeeRepository = new EmployeeRepository();
+        List<Person> personList = employeeRepository.getAllPerson();
 
 //        personList.stream().forEach(x-> System.out.println(x.getName()));
 
@@ -146,9 +146,9 @@ public class Main {
         List<String> reverseString = palidromString.stream().map(m -> new StringBuilder(m).reverse().toString()).toList();
         System.out.println("reverse string "+ reverseString);
 
-        List<Person> list2 = repository.getAllPerson().stream().sorted(Comparator.reverseOrder()).limit(3).toList();
+        List<Person> list2 = employeeRepository.getAllPerson().stream().sorted(Comparator.reverseOrder()).limit(3).toList();
         System.out.println(list2);
-        List<Person> allPerson = repository.getAllPerson();
+        List<Person> allPerson = employeeRepository.getAllPerson();
         List<Person> list3 = allPerson.stream().sorted(Comparator.comparing(Person::getAge).reversed()).limit(3).toList();
         System.out.println(list3);
 
