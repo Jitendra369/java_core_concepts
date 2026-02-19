@@ -1,19 +1,22 @@
 package lld.voting.service;
 
+import lld.voting.entity.Vote;
 import lld.voting.entity.Voter;
+import lld.voting.enu.ElectionType;
 
 import java.util.*;
 
 public class VoterDAO {
 
     private HashMap<Integer, Voter> allVoters;
+    private HashMap<ElectionType, Vote> voters;
 
     public VoterDAO() {
         this.allVoters = new HashMap<>();
     }
 
     //    save the new Voter
-    public boolean addVoter(Voter voter) {
+    public boolean addNewVoter(Voter voter) {
         Voter saveVoter = allVoters.get(voter.getAdharnumber());
         if (saveVoter == null) {
             allVoters.put(voter.getAdharnumber(), voter);
@@ -32,5 +35,9 @@ public class VoterDAO {
             return new ArrayList<>(allVoters.values());
         }
         return new ArrayList<>();
+    }
+
+
+    public boolean castVoting(Vote vote){return false;
     }
 }

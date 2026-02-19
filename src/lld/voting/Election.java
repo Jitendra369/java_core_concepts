@@ -5,7 +5,9 @@ import lld.voting.entity.Voter;
 import lld.voting.enu.ElectionType;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Election {
 
@@ -13,8 +15,10 @@ public class Election {
     private List<Voter> voters;
     private List<Candidate> candidates;
     private Date dateOfElection;
+    private Map<ElectionType,Map<Integer, Integer>> voterCandidateMapping;
 
     public Election() {
+        voterCandidateMapping = new HashMap<>();
     }
 
     public Election(ElectionType electionType, List<Voter> voters, List<Candidate> candidates) {

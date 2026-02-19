@@ -1,5 +1,6 @@
 package lld.voting;
 
+import lld.voting.entity.Vote;
 import lld.voting.entity.Voter;
 import lld.voting.service.RegisterVoterService;
 
@@ -13,6 +14,10 @@ public class ElectionCommisionService {
     public ElectionCommisionService(Election election, RegisterVoterService registerVoterService) {
         this.election = election;
         this.registerVoterService = registerVoterService;
+    }
+
+    public void addVoting(Vote vote){
+        registerVoterService.castVoting(vote);
     }
 
 }
